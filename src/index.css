@@ -127,12 +127,12 @@
     box-shadow: 0 12px 35px -8px hsla(25, 25%, 18%, 0.15);
   }
 
-  /* Section padding */
+  /* Section padding - mobile optimized */
   .section-padding {
-    @apply py-20 md:py-28 lg:py-32;
+    @apply py-12 sm:py-16 md:py-24 lg:py-32;
   }
 
-  /* Container with max-width */
+  /* Container with max-width - mobile optimized */
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
