@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={workshopHero}
-          alt="Professionelle Schreinerwerkstatt"
+          alt="CH Montagen - Präzise Holzbau-Montagen"
           className="w-full h-full object-cover"
         />
         {/* Warmer, organischer Gradient */}
@@ -45,7 +45,7 @@ const HeroSection = () => {
           >
             <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-full text-white/95 text-sm font-medium mb-8 border border-white/20">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              Ihr Partner für Qualitätsmontage
+              Schweizweit im Einsatz
             </span>
           </motion.div>
 
@@ -55,8 +55,8 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-8"
           >
-            Handwerk mit
-            <span className="block text-accent">Schweizer Präzision</span>
+            Präzise Montagen &
+            <span className="block text-accent">moderner Holzbau</span>
           </motion.h1>
 
           <motion.p
@@ -65,8 +65,8 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-lg md:text-xl text-white/85 mb-10 max-w-xl leading-relaxed"
           >
-            Küchen, Möbel, Treppen und Innenausbau – handwerklich perfekt 
-            umgesetzt. Seit über 20 Jahren Ihr Vertrauenspartner.
+            Saubere Arbeit, klare Absprachen und moderne Lösungen in Holz – 
+            von Elementbau über Fassaden bis zum kompletten Innenausbau.
           </motion.p>
 
           {/* Trust Indicators */}
@@ -76,7 +76,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap gap-6 mb-12"
           >
-            {["20+ Jahre Erfahrung", "Schweizer Qualität", "Persönliche Betreuung"].map((item, index) => (
+            {["Jung & engagiert", "Schweizweiter Einsatz", "Nachhaltig bauen"].map((item, index) => (
               <div key={index} className="flex items-center gap-2.5 text-white/90">
                 <CheckCircle className="w-5 h-5 text-accent" />
                 <span className="text-sm font-medium">{item}</span>

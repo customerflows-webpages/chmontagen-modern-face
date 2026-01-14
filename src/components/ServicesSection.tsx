@@ -1,49 +1,35 @@
 import AnimatedSection from "./AnimatedSection";
 import { 
-  ChefHat, 
-  DoorOpen, 
+  Hammer, 
   Layers, 
-  Sofa, 
-  Wrench, 
+  Home, 
   Building2 
 } from "lucide-react";
 
 const services = [
   {
-    icon: ChefHat,
-    title: "Küchenmontage",
+    icon: Hammer,
+    title: "Montage",
     description:
-      "Professionelle Montage Ihrer neuen Küche – vom Aufmass bis zur finalen Installation aller Geräte.",
-  },
-  {
-    icon: Sofa,
-    title: "Möbelmontage",
-    description:
-      "Einbauschränke, Regale und Massmöbel – wir montieren präzise und effizient.",
+      "Präzise Montagearbeiten für unterschiedlichste Holzbauprojekte – von Bauelementen bis zu kompletten Holzstrukturen. Professionelle Möbelmontagen, millimetergenau, sauber und zuverlässig.",
   },
   {
     icon: Layers,
-    title: "Treppenbau",
+    title: "Paneelbau",
     description:
-      "Individuelle Treppen aus Holz, Glas und Stahl – sicher montiert mit handwerklicher Perfektion.",
+      "Individuelle Paneelsysteme für Wände, Decken und Fassaden. Modern, hochwertig und optimal auf dein Projekt abgestimmt.",
   },
   {
-    icon: DoorOpen,
-    title: "Türen & Fenster",
+    icon: Home,
+    title: "Innenausbau",
     description:
-      "Fachgerechte Montage von Innentüren, Haustüren und Fenstern aller Art.",
+      "Hochwertiger Innenausbau aus Holz: Verkleidungen, Bodenbeläge, Raumelemente und komplette Ausbaukonzepte – warm, modern und dauerhaft.",
   },
   {
     icon: Building2,
-    title: "Innenausbau",
+    title: "Fassadenbau",
     description:
-      "Kompletter Innenausbau von Wohn- und Geschäftsräumen nach Ihren Wünschen.",
-  },
-  {
-    icon: Wrench,
-    title: "Reparaturen",
-    description:
-      "Schnelle und zuverlässige Reparaturen an bestehenden Einbauten und Möbeln.",
+      "Robuste und stilvolle Holzfassaden, die sowohl schützen als auch architektonisch überzeugen. Witterungsbeständig, langlebig und ästhetisch.",
   },
 ];
 
@@ -56,15 +42,15 @@ const ServicesSection = () => {
             Unsere Leistungen
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground mt-3 mb-6">
-            Handwerk aus Leidenschaft
+            Vertrauen, Kreativität & Qualität
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Von der ersten Beratung bis zur finalen Montage – wir begleiten Sie 
-            durch jedes Projekt mit Schweizer Sorgfalt und echtem Handwerksstolz.
+            Von der Planung bis zur Ausführung begleiten wir dein Projekt mit Fachwissen, 
+            Effizienz und einem sicheren Blick für Details.
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <AnimatedSection key={service.title} delay={index * 0.08}>
               <div className="service-card h-full group">
