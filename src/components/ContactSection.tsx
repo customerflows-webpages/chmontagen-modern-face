@@ -10,8 +10,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Telefon",
-    value: "+41 79 123 45 67",
-    href: "tel:+41791234567",
+    value: "078 333 24 00",
+    href: "tel:0783332400",
   },
   {
     icon: Mail,
@@ -21,8 +21,8 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    title: "Standort",
-    value: "Schweiz – landesweit tätig",
+    title: "Einsatzgebiet",
+    value: "Ganze Schweiz",
     href: null,
   },
   {
@@ -46,7 +46,7 @@ const ContactSection = () => {
     e.preventDefault();
     toast({
       title: "Nachricht gesendet!",
-      description: "Wir melden uns in Kürze bei Ihnen.",
+      description: "Wir melden uns in Kürze bei dir.",
     });
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
@@ -59,11 +59,11 @@ const ContactSection = () => {
             Kontakt
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground mt-3 mb-6">
-            Lassen Sie uns Ihr Projekt besprechen
+            Bereit für dein Projekt?
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Haben Sie eine Idee? Wir freuen uns auf Ihre Anfrage – 
-            unverbindlich und persönlich.
+            Lass uns gemeinsam etwas aus Holz schaffen, das begeistert und 
+            langfristig Bestand hat. Wir freuen uns auf deine Ideen!
           </p>
         </AnimatedSection>
 
@@ -108,7 +108,7 @@ const ContactSection = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Standort"
+                title="Einsatzgebiet Schweiz"
               />
             </div>
           </AnimatedSection>
@@ -120,16 +120,16 @@ const ContactSection = () => {
               className="bg-card p-8 md:p-10 rounded-3xl shadow-xl border border-border"
             >
               <h3 className="text-2xl font-semibold text-foreground mb-2 font-sans">
-                Schreiben Sie uns
+                Jetzt unverbindlich anfragen
               </h3>
               <p className="text-muted-foreground text-sm mb-8">
-                Wir antworten in der Regel innerhalb von 24 Stunden.
+                Wir melden uns schnellstmöglich bei dir.
               </p>
 
               <div className="grid md:grid-cols-2 gap-5 mb-5">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Ihr Name *
+                    Dein Name *
                   </label>
                   <Input
                     type="text"
@@ -138,7 +138,7 @@ const ContactSection = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    placeholder="Hans Müller"
+                    placeholder="Max Muster"
                     className="bg-cream/50 border-border focus:border-accent h-12 rounded-xl"
                   />
                 </div>
@@ -153,7 +153,7 @@ const ContactSection = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    placeholder="hans@beispiel.ch"
+                    placeholder="max@beispiel.ch"
                     className="bg-cream/50 border-border focus:border-accent h-12 rounded-xl"
                   />
                 </div>
@@ -169,14 +169,14 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  placeholder="+41 79 123 45 67"
+                  placeholder="078 123 45 67"
                   className="bg-cream/50 border-border focus:border-accent h-12 rounded-xl"
                 />
               </div>
 
               <div className="mb-8">
                 <label className="block text-sm font-medium text-foreground mb-2">
-                  Ihre Nachricht *
+                  Deine Nachricht *
                 </label>
                 <Textarea
                   required
@@ -184,7 +184,7 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  placeholder="Beschreiben Sie kurz Ihr Projekt oder Anliegen..."
+                  placeholder="Beschreibe kurz dein Projekt oder Anliegen..."
                   rows={5}
                   className="bg-cream/50 border-border focus:border-accent resize-none rounded-xl"
                 />

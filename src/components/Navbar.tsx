@@ -81,7 +81,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="tel:+41791234567"
+              href="tel:0783332400"
               className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 ${
                 isScrolled
                   ? "bg-accent text-accent-foreground hover:bg-accent/90 shadow-md"
@@ -133,11 +133,11 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="tel:+41791234567"
+                href="tel:0783332400"
                 className="flex items-center justify-center gap-2 mt-4 w-full py-4 bg-accent text-accent-foreground rounded-xl font-semibold shadow-md"
               >
                 <Phone className="w-4 h-4" />
-                Jetzt anrufen
+                078 333 24 00
               </a>
             </div>
           </motion.div>
