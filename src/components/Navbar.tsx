@@ -37,7 +37,7 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-lg"
+          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50"
           : "bg-transparent"
       }`}
     >
@@ -82,10 +82,10 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="tel:+41791234567"
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 ${
                 isScrolled
-                  ? "bg-accent text-accent-foreground hover:bg-accent/90"
-                  : "bg-white text-primary hover:bg-white/90"
+                  ? "bg-accent text-accent-foreground hover:bg-accent/90 shadow-md"
+                  : "bg-white/95 text-primary hover:bg-white shadow-lg"
               }`}
             >
               <Phone className="w-4 h-4" />
@@ -96,7 +96,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors ${
+            className={`md:hidden p-2 rounded-xl transition-colors ${
               isScrolled ? "text-foreground" : "text-white"
             }`}
           >
@@ -127,14 +127,14 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="block py-3 px-4 rounded-lg text-foreground hover:bg-secondary transition-colors"
+                  className="block py-3 px-4 rounded-xl text-foreground hover:bg-cream transition-colors font-medium"
                 >
                   {item.label}
                 </a>
               ))}
               <a
                 href="tel:+41791234567"
-                className="flex items-center justify-center gap-2 mt-4 w-full py-3 bg-accent text-accent-foreground rounded-lg font-medium"
+                className="flex items-center justify-center gap-2 mt-4 w-full py-4 bg-accent text-accent-foreground rounded-xl font-semibold shadow-md"
               >
                 <Phone className="w-4 h-4" />
                 Jetzt anrufen
