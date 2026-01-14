@@ -12,7 +12,7 @@ const Footer = () => {
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-display">CH Montagen</h3>
             <p className="text-xs sm:text-sm text-primary-foreground/70 mb-1 sm:mb-2">by Schoeler GmbH</p>
             <p className="text-primary-foreground/80 mb-4 sm:mb-6 max-w-md leading-relaxed text-sm sm:text-base">
-              Dein Partner für präzise Montagen und zeitgemässen Holzbau im Raum Zürich. 
+              Dein Partner für präzise Montagen und zeitgemässen Holzbau mit Sitz in Wetzikon/ZH. 
               Saubere Arbeit, klare Absprachen und moderne Lösungen in Holz.
             </p>
             <div className="flex flex-col gap-2 sm:gap-3">
@@ -32,7 +32,7 @@ const Footer = () => {
               </a>
               <div className="flex items-center gap-3 text-primary-foreground/80 text-sm sm:text-base">
                 <MapPin className="w-4 h-4" />
-                Zürich & Umgebung
+                Wetzikon/ZH
               </div>
             </div>
           </div>

@@ -52,7 +52,7 @@ const AboutSection = () => {
                   </div>
                   <div>
                     <div className="text-sm sm:text-lg font-bold text-foreground font-display">Standort</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">Zürich & Region</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">Wetzikon/ZH</div>
                   </div>
                 </div>
               </div>
@@ -68,7 +68,7 @@ const AboutSection = () => {
               CH Montagen by Schoeler GmbH
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed">
-              Wir sind dein Partner für präzise Montagen und zeitgemässen Holzbau im Raum Zürich. 
+              Wir sind dein Partner für präzise Montagen und zeitgemässen Holzbau mit Sitz in Wetzikon/ZH. 
               Wir unterstützen Bauherren, Holzbauunternehmen, Privatkunden und Planer 
               bei Projekten, bei denen es auf saubere Details und zuverlässige Termine ankommt.
             </p>
@@ -129,7 +129,7 @@ const AboutSection = () => {
               <div className="p-2 sm:p-0">
                 <div className="text-3xl sm:text-4xl md:text-5xl font-bold font-display mb-1 sm:mb-2">📍</div>
                 <div className="font-semibold text-sm sm:text-lg">Lokal</div>
-                <p className="text-xs sm:text-sm text-primary-foreground/70 mt-0.5 sm:mt-1">Zürich & Region</p>
+                <p className="text-xs sm:text-sm text-primary-foreground/70 mt-0.5 sm:mt-1">Wetzikon/ZH</p>
               </div>
             </div>
           </div>
