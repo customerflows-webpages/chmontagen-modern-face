@@ -11,7 +11,7 @@ const projects = [
     title: "Moderne Küche",
     category: "Küchenmontage",
     description: "Komplette Kücheninstallation in einem Neubau",
-    location: "Zürich",
+    location: "Wetzikon",
   },
   {
     image: modernStairs,
@@ -45,7 +45,7 @@ const ProjectsSection = () => {
             Referenzen
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mt-2 sm:mt-3 mb-4 sm:mb-6">
-            Projekte im Raum Zürich
+            Projekte im Zürcher Oberland
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
             Jedes Projekt erzählt eine Geschichte. Hier zeigen wir Ihnen, 

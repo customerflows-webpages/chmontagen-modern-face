@@ -46,7 +46,7 @@ const HeroSection = () => {
           >
             <span className="inline-flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-white/10 backdrop-blur-sm rounded-full text-white/95 text-xs sm:text-sm font-medium mb-6 sm:mb-8 border border-white/20">
               <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
-              Zürich & Umgebung
+              Wetzikon/ZH & Umgebung
             </span>
           </motion.div>
 
@@ -77,7 +77,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap gap-3 sm:gap-6 mb-8 sm:mb-12"
           >
-            {["Jung & engagiert", "Lokaler Partner in Zürich", "Nachhaltig bauen"].map((item, index) => (
+            {["Jung & engagiert", "Lokaler Partner in Wetzikon", "Nachhaltig bauen"].map((item, index) => (
               <div key={index} className="flex items-center gap-2 text-white/90">
                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
                 <span className="text-xs sm:text-sm font-medium">{item}</span>

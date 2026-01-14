@@ -61,7 +61,7 @@ const Navbar = () => {
               <span className={`text-[10px] sm:text-xs transition-colors hidden sm:block ${
                 isScrolled ? "text-muted-foreground" : "text-white/70"
               }`}>
-                Zürich & Region
+                Wetzikon/ZH
               </span>
             </div>
           </a>
@@ -143,7 +143,7 @@ const Navbar = () => {
               ))}
               <div className="flex items-center gap-2 py-3 px-4 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm">Zürich & Region</span>
+                <span className="text-sm">Wetzikon/ZH</span>
               </div>
               <a
                 href="tel:0783332400"

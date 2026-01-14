@@ -22,7 +22,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Standort",
-    value: "Zürich & Umgebung",
+    value: "Wetzikon/ZH",
     href: null,
   },
   {
@@ -108,7 +108,7 @@ const ContactSection = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Standort Zürich"
+                title="Standort Wetzikon"
                 className="grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
