@@ -34,18 +34,18 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="section-padding bg-secondary/30">
+    <section id="projects" className="section-padding bg-cream/50">
       <div className="container-custom">
         <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent font-medium text-sm tracking-wider uppercase">
-            Unsere Projekte
+          <span className="inline-block px-4 py-1.5 bg-accent/10 text-accent font-medium text-sm tracking-wider uppercase rounded-full mb-4">
+            Referenzen
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-foreground mt-3 mb-6">
-            Einblick in unsere Arbeit
+            Unsere Arbeit spricht für sich
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Jedes Projekt ist einzigartig. Hier zeigen wir Ihnen eine Auswahl 
-            unserer erfolgreich abgeschlossenen Arbeiten.
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Jedes Projekt erzählt eine Geschichte. Hier zeigen wir Ihnen, 
+            worauf wir stolz sind.
           </p>
         </AnimatedSection>
 
@@ -53,9 +53,9 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <AnimatedSection key={project.title} delay={index * 0.1}>
               <motion.div
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
-                className="group relative rounded-2xl overflow-hidden bg-card shadow-lg"
+                className="group relative rounded-3xl overflow-hidden bg-card shadow-lg"
               >
                 <div className="image-zoom aspect-[4/3]">
                   <img
@@ -64,26 +64,26 @@ const ProjectsSection = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Warm Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-wood-dark/95 via-wood-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                 
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="text-accent text-sm font-medium">
+                {/* Content on Hover */}
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
+                  <span className="inline-block px-3 py-1 bg-accent/90 text-white text-xs font-medium rounded-full mb-3">
                     {project.category}
                   </span>
-                  <h3 className="text-xl font-semibold mt-1 font-sans">
+                  <h3 className="text-2xl font-semibold font-sans">
                     {project.title}
                   </h3>
-                  <p className="text-white/80 text-sm mt-2">
+                  <p className="text-white/85 text-sm mt-2">
                     {project.description}
                   </p>
                 </div>
 
                 {/* Always visible label */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent group-hover:opacity-0 transition-opacity duration-300">
-                  <span className="text-white/80 text-sm">{project.category}</span>
-                  <h3 className="text-white text-lg font-semibold font-sans">
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-foreground/70 via-foreground/30 to-transparent group-hover:opacity-0 transition-opacity duration-300">
+                  <span className="text-white/85 text-sm font-medium">{project.category}</span>
+                  <h3 className="text-white text-xl font-semibold font-sans mt-1">
                     {project.title}
                   </h3>
                 </div>

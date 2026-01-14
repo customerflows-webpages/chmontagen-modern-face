@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ['"Playfair Display"', "Georgia", "serif"],
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+        display: ["Fraunces", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -59,7 +59,9 @@ export default {
         wood: {
           DEFAULT: "hsl(var(--wood))",
           light: "hsl(var(--wood-light))",
+          dark: "hsl(var(--wood-dark))",
         },
+        cream: "hsl(var(--cream))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
