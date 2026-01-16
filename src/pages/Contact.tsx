@@ -47,15 +47,14 @@ const Contact = () => {
 
                         <div className="bg-white p-8 md:p-12 rounded-sm shadow-xl border border-border/50">
                             <form
-                                action="https://formsubmit.co/webpage@customerflows.ch"
+                                action="https://api.web3forms.com/submit"
                                 method="POST"
                                 className="space-y-8"
                             >
-                                {/* FormSubmit Configuration */}
-                                <input type="hidden" name="_subject" value="Neue Anfrage via Website" />
-                                <input type="hidden" name="_captcha" value="false" />
-                                <input type="hidden" name="_autoresponse" value="Vielen Dank für deine Nachricht! Wir haben sie erhalten und melden uns so schnell wie möglich." />
-                                <input type="hidden" name="_template" value="table" />
+                                {/* Web3Forms Configuration */}
+                                <input type="hidden" name="access_key" value="41cd4c28-120e-45b7-8042-853ee9dbbbb1" />
+                                <input type="hidden" name="subject" value="Neue Anfrage via Website (CH Montagen)" />
+                                <input type="hidden" name="from_name" value="CH Montagen Website" />
 
                                 <div className="grid md:grid-cols-2 gap-8">
                                     <div className="space-y-2">

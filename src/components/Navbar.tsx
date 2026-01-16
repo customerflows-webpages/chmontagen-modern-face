@@ -31,8 +31,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm py-4"
-          : "bg-transparent py-6"
+        ? "bg-white/95 backdrop-blur-md shadow-sm py-4"
+        : "bg-transparent py-6"
         }`}
     >
       <nav className="container-custom">
@@ -55,8 +55,8 @@ const Navbar = () => {
                 key={item.label}
                 to={item.href}
                 className={`text-sm font-medium transition-colors relative hover-lift ${isScrolled
-                    ? isActive(item.href) ? "text-primary font-bold" : "text-primary/70 hover:text-primary"
-                    : isActive(item.href) ? "text-white font-bold" : "text-white/80 hover:text-white"
+                  ? isActive(item.href) ? "text-primary font-bold" : "text-primary/70 hover:text-primary"
+                  : isActive(item.href) ? "text-white font-bold" : "text-white/80 hover:text-white"
                   }`}
               >
                 {item.label}
@@ -69,8 +69,8 @@ const Navbar = () => {
             <a
               href="tel:0783332400"
               className={`flex items-center gap-2 px-6 py-3 rounded-sm font-medium transition-all duration-300 text-sm ${isScrolled
-                  ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                  : "bg-white text-primary hover:bg-white/90"
+                ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                : "bg-white text-primary hover:bg-white/90"
                 }`}
             >
               <Phone className="w-4 h-4" />
@@ -98,29 +98,29 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b border-border absolute top-full left-0 right-0 overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden fixed inset-0 z-40 bg-white pt-32 px-6 pb-6 overflow-y-auto"
           >
-            <div className="container-custom py-8 space-y-4">
+            <div className="flex flex-col gap-6">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   to={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block text-xl font-medium transition-colors ${isActive(item.href) ? "text-primary" : "text-primary/70 hover:text-primary"
+                  className={`block text-2xl font-bold transition-colors ${isActive(item.href) ? "text-primary" : "text-foreground/80 hover:text-primary"
                     }`}
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className="pt-6 border-t border-border mt-6">
+              <div className="pt-8 border-t border-border mt-4">
                 <a
                   href="tel:0783332400"
-                  className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-primary-foreground font-medium"
+                  className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-primary-foreground font-bold text-lg rounded-sm"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-5 h-5" />
                   078 333 24 00
                 </a>
               </div>
