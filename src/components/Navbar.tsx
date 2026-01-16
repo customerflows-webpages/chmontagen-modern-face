@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Leistungen", href: "#services" },
-  { label: "Über uns", href: "#about" },
-  { label: "Projekte", href: "#projects" },
-  { label: "Kontakt", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Über uns", href: "/ueber-uns" },
+  { label: "Leistungen", href: "/leistungen" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,91 +23,66 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm py-4"
+          : "bg-transparent py-6"
+        }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("#home");
-            }}
-            className="flex items-center gap-2"
+          <Link
+            to="/"
+            className="group"
           >
-            <div className="flex flex-col">
-              <span className={`text-lg sm:text-2xl font-bold font-display tracking-tight transition-colors ${
-                isScrolled ? "text-primary" : "text-white"
+            <span className={`text-2xl font-bold tracking-tighter transition-colors ${isScrolled ? "text-primary" : "text-white"
               }`}>
-                CH Montagen
-              </span>
-              <span className={`text-[10px] sm:text-xs transition-colors hidden sm:block ${
-                isScrolled ? "text-muted-foreground" : "text-white/70"
-              }`}>
-                Wetzikon/ZH
-              </span>
-            </div>
-          </a>
+              CH Montagen
+            </span>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <div className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.href);
-                }}
-                className={`nav-link transition-colors ${
-                  isScrolled ? "" : "!text-white/90 hover:!text-white"
-                }`}
+                to={item.href}
+                className={`text-sm font-medium transition-colors relative hover-lift ${isScrolled
+                    ? isActive(item.href) ? "text-primary font-bold" : "text-primary/70 hover:text-primary"
+                    : isActive(item.href) ? "text-white font-bold" : "text-white/80 hover:text-white"
+                  }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center">
             <a
               href="tel:0783332400"
-              className={`flex items-center gap-2 px-4 xl:px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 text-sm xl:text-base ${
-                isScrolled
-                  ? "bg-accent text-accent-foreground hover:bg-accent/90 shadow-md"
-                  : "bg-white/95 text-primary hover:bg-white shadow-lg"
-              }`}
+              className={`flex items-center gap-2 px-6 py-3 rounded-sm font-medium transition-all duration-300 text-sm ${isScrolled
+                  ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                  : "bg-white text-primary hover:bg-white/90"
+                }`}
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden xl:inline">078 333 24 00</span>
-              <span className="xl:hidden">Anrufen</span>
+              <span>078 333 24 00</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 rounded-xl transition-colors ${
-              isScrolled ? "text-foreground" : "text-white"
-            }`}
+            className={`lg:hidden p-2 transition-colors ${isScrolled ? "text-primary" : "text-white"
+              }`}
             aria-label="Menu öffnen"
           >
             {isMobileMenuOpen ? (
@@ -125,33 +101,29 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-card border-t border-border"
+            className="lg:hidden bg-white border-b border-border absolute top-full left-0 right-0 overflow-hidden"
           >
-            <div className="container-custom py-4 space-y-2">
+            <div className="container-custom py-8 space-y-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.href);
-                  }}
-                  className="block py-3 px-4 rounded-xl text-foreground hover:bg-cream transition-colors font-medium"
+                  to={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block text-xl font-medium transition-colors ${isActive(item.href) ? "text-primary" : "text-primary/70 hover:text-primary"
+                    }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-              <div className="flex items-center gap-2 py-3 px-4 text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm">Wetzikon/ZH</span>
+              <div className="pt-6 border-t border-border mt-6">
+                <a
+                  href="tel:0783332400"
+                  className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-primary-foreground font-medium"
+                >
+                  <Phone className="w-4 h-4" />
+                  078 333 24 00
+                </a>
               </div>
-              <a
-                href="tel:0783332400"
-                className="flex items-center justify-center gap-2 mt-4 w-full py-4 bg-accent text-accent-foreground rounded-xl font-semibold shadow-md"
-              >
-                <Phone className="w-4 h-4" />
-                078 333 24 00
-              </a>
             </div>
           </motion.div>
         )}

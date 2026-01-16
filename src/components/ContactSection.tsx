@@ -1,5 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -21,14 +21,8 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    title: "Standort",
-    value: "Wetzikon/ZH",
-    href: null,
-  },
-  {
-    icon: Clock,
-    title: "Erreichbarkeit",
-    value: "Mo–Fr: 7:00 – 18:00",
+    title: "Hauptsitz",
+    value: "Wetzikon/ZH (Schweizweit tätig)",
     href: null,
   },
 ];
@@ -52,54 +46,55 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-background">
+    <section id="contact" className="section-padding bg-secondary/30">
       <div className="container-custom">
-        <AnimatedSection className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 px-4">
-          <span className="inline-block px-3 sm:px-4 py-1.5 bg-primary/10 text-primary font-medium text-xs sm:text-sm tracking-wider uppercase rounded-full mb-3 sm:mb-4">
-            Kontakt
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mt-2 sm:mt-3 mb-4 sm:mb-6">
-            Bereit für dein Projekt?
-          </h2>
-          <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
-            Lass uns gemeinsam etwas aus Holz schaffen, das begeistert und 
-            langfristig Bestand hat. Wir freuen uns auf deine Ideen!
-          </p>
+        <AnimatedSection className="mb-16">
+          <div className="max-w-2xl">
+            <span className="text-sm font-semibold tracking-wider uppercase text-muted-foreground mb-4 block">
+              Kontakt
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Bereit für dein Projekt?
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Lass uns gemeinsam etwas aus Holz schaffen, das begeistert und
+              langfristig Bestand hat.
+            </p>
+          </div>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-20">
           {/* Contact Info */}
-          <AnimatedSection direction="left" className="lg:col-span-2 space-y-4 sm:space-y-5">
-            {contactInfo.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-cream/60 hover:bg-cream transition-colors border border-transparent hover:border-border"
-              >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-primary/15 to-wood-light/20 flex items-center justify-center flex-shrink-0">
-                  <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                </div>
-                <div>
-                  <div className="text-xs sm:text-sm text-muted-foreground mb-0.5 sm:mb-1">
-                    {item.title}
+          <AnimatedSection direction="left" className="lg:col-span-2 space-y-8">
+            <div className="space-y-6">
+              {contactInfo.map((item, index) => (
+                <div key={index} className="flex items-start gap-4 p-6 bg-white border border-border rounded-sm">
+                  <div className="w-10 h-10 flex items-center justify-center bg-secondary rounded-sm flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-primary" />
                   </div>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      className="font-semibold text-foreground hover:text-accent transition-colors text-sm sm:text-base"
-                    >
-                      {item.value}
-                    </a>
-                  ) : (
-                    <span className="font-semibold text-foreground text-sm sm:text-base">
-                      {item.value}
-                    </span>
-                  )}
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">
+                      {item.title}
+                    </div>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="text-lg font-bold text-foreground hover:text-primary/70 transition-colors"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <span className="text-lg font-bold text-foreground">
+                        {item.value}
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
 
             {/* Map */}
-            <div className="aspect-video rounded-xl sm:rounded-2xl bg-cream overflow-hidden border border-border">
+            <div className="aspect-video rounded-sm overflow-hidden border border-border grayscale hover:grayscale-0 transition-all duration-700">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d172168.39827799428!2d8.378519526825863!3d47.37688560337959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47900b9749bea219%3A0xe66e8df1e71fdc03!2sZ%C3%BCrich!5e0!3m2!1sde!2sch!4v1"
                 width="100%"
@@ -109,7 +104,6 @@ const ContactSection = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Standort Wetzikon"
-                className="grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
           </AnimatedSection>
@@ -118,18 +112,18 @@ const ContactSection = () => {
           <AnimatedSection direction="right" className="lg:col-span-3">
             <form
               onSubmit={handleSubmit}
-              className="bg-card p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl shadow-xl border border-border"
+              className="bg-white p-8 md:p-12 border border-border rounded-sm shadow-sm"
             >
-              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-1 sm:mb-2 font-sans">
-                Jetzt unverbindlich anfragen
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                Jetzt anfragen
               </h3>
-              <p className="text-muted-foreground text-xs sm:text-sm mb-6 sm:mb-8">
+              <p className="text-muted-foreground text-sm mb-8">
                 Wir melden uns schnellstmöglich bei dir.
               </p>
 
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
+              <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
+                  <label className="block text-sm font-medium text-foreground mb-2">
                     Dein Name *
                   </label>
                   <Input
@@ -139,12 +133,11 @@ const ContactSection = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    placeholder="Max Muster"
-                    className="bg-cream/50 border-border focus:border-accent h-11 sm:h-12 rounded-lg sm:rounded-xl text-base"
+                    className="bg-secondary/20 border-border focus:border-primary h-12 rounded-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
+                  <label className="block text-sm font-medium text-foreground mb-2">
                     E-Mail *
                   </label>
                   <Input
@@ -154,14 +147,13 @@ const ContactSection = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    placeholder="max@beispiel.ch"
-                    className="bg-cream/50 border-border focus:border-accent h-11 sm:h-12 rounded-lg sm:rounded-xl text-base"
+                    className="bg-secondary/20 border-border focus:border-primary h-12 rounded-sm"
                   />
                 </div>
               </div>
 
-              <div className="mb-4 sm:mb-5">
-                <label className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Telefon
                 </label>
                 <Input
@@ -170,13 +162,12 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  placeholder="078 123 45 67"
-                  className="bg-cream/50 border-border focus:border-accent h-11 sm:h-12 rounded-lg sm:rounded-xl text-base"
+                  className="bg-secondary/20 border-border focus:border-primary h-12 rounded-sm"
                 />
               </div>
 
-              <div className="mb-6 sm:mb-8">
-                <label className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
+              <div className="mb-8">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Deine Nachricht *
                 </label>
                 <Textarea
@@ -185,15 +176,14 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  placeholder="Beschreibe kurz dein Projekt oder Anliegen..."
-                  rows={4}
-                  className="bg-cream/50 border-border focus:border-accent resize-none rounded-lg sm:rounded-xl text-base"
+                  rows={5}
+                  className="bg-secondary/20 border-border focus:border-primary resize-none rounded-sm"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-5 sm:py-6 text-sm sm:text-base font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all"
+                className="w-full btn-primary h-14 text-base font-semibold rounded-sm"
               >
                 <Send className="w-4 h-4 mr-2" />
                 Anfrage senden
