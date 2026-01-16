@@ -23,9 +23,6 @@ const Index = () => {
               </h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  <span className="font-semibold text-primary">CH-Montagen by Schoeler GmbH</span> ist dein Partner für präzise Montagen und zeitgemässen Holzbau.
-                </p>
-                <p>
                   Wir unterstützen Bauherren, Holzbauunternehmen, Privatkunden und Planer bei Projekten,
                   bei denen es auf saubere Details, zuverlässige Termine und eine professionelle Umsetzung ankommt.
                 </p>

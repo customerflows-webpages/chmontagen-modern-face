@@ -19,7 +19,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container-custom relative z-10 pt-20">
-        <div className="max-w-4xl text-left">
+        <div className="max-w-5xl text-left">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -40,8 +40,9 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8"
           >
-            Präzise Montagen und <br />
-            <span className="text-white/90">zeitgemässer Holzbau.</span>
+            Saubere Arbeit, <br />
+            <span className="text-white/90">klare Absprachen und moderne Lösungen in&nbsp;Holz</span>
+            <span className="text-white/80 block text-3xl md:text-5xl mt-4">– schweizweit im Einsatz.</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -51,8 +52,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl leading-relaxed font-light"
           >
-            Wir unterstützen Bauherren, Holzbauunternehmen und Privatkunden mit sauberen Details,
-            zuverlässigen Terminen und professioneller Umsetzung.
+            CH-Montagen by Schoeler GmbH ist dein Partner für präzise Montagen und zeitgemässen Holzbau.
           </motion.p>
 
           {/* Trust Indicators */}
