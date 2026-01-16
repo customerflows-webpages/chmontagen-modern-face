@@ -55,6 +55,7 @@ const Contact = () => {
                                 <input type="hidden" name="access_key" value="41cd4c28-120e-45b7-8042-853ee9dbbbb1" />
                                 <input type="hidden" name="subject" value="Neue Anfrage via Website (CH Montagen)" />
                                 <input type="hidden" name="from_name" value="CH Montagen Website" />
+                                <input type="hidden" name="redirect" value="https://chmontagen.customerflows.site/danke" />
 
                                 <div className="grid md:grid-cols-2 gap-8">
                                     <div className="space-y-2">
