@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,7 +11,9 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="sm:col-span-2">
-            <h3 className="text-2xl font-bold mb-6 font-display tracking-tight text-white">CH Montagen</h3>
+            <Link to="/" className="inline-block mb-6">
+              <img src={logo} alt="CH Montagen" className="h-16 w-auto brightness-0 invert" />
+            </Link>
             <p className="text-sm text-primary-foreground/70 mb-2">by Schoeler GmbH</p>
             <p className="text-primary-foreground/80 mb-8 max-w-md leading-relaxed">
               Dein Partner für präzise Montagen und zeitgemässen Holzbau mit Sitz in Wetzikon/ZH.

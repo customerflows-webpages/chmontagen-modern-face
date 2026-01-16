@@ -10,6 +10,8 @@ const navItems = [
   { label: "Kontakt", href: "/kontakt" },
 ];
 
+import logo from "@/assets/logo.png";
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,10 +44,11 @@ const Navbar = () => {
             to="/"
             className="group"
           >
-            <span className={`text-2xl font-bold tracking-tighter transition-colors ${isScrolled ? "text-primary" : "text-white"
-              }`}>
-              CH Montagen
-            </span>
+            <img
+              src={logo}
+              alt="CH Montagen"
+              className={`h-12 w-auto transition-all duration-300 ${isScrolled ? "" : "brightness-0 invert"}`}
+            />
           </Link>
 
           {/* Desktop Navigation */}

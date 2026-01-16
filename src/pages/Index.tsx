@@ -64,44 +64,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container-custom">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <AnimatedSection delay={0.1} className="bg-white p-8 rounded-sm shadow-sm border border-border">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                <Star className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Jung & engagiert</h3>
-              <p className="text-muted-foreground">Moderne Denkweise trifft auf präzises Handwerk.</p>
-            </AnimatedSection>
 
-            <AnimatedSection delay={0.2} className="bg-white p-8 rounded-sm shadow-sm border border-border">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                <Hammer className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Leidenschaft</h3>
-              <p className="text-muted-foreground">Wir geben jedem Projekt unsere volle Aufmerksamkeit – vom kleinen Innenausbau bis zur grossen Konstruktion.</p>
-            </AnimatedSection>
 
-            <AnimatedSection delay={0.3} className="bg-white p-8 rounded-sm shadow-sm border border-border">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                <Leaf className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Nachhaltig bauen</h3>
-              <p className="text-muted-foreground">Holz als klimafreundlicher, natülicher Rohstoff steht bei uns im Mittelpunkt.</p>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.4} className="bg-white p-8 rounded-sm shadow-sm border border-border">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Dynamisch & flexibel</h3>
-              <p className="text-muted-foreground">Schnelle Terminfindung, transparente Kommunikation und saubere Umsetzung.</p>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
 
       {/* Services Summary */}
       <section className="section-padding bg-white">
@@ -154,6 +118,49 @@ const Index = () => {
                 Alle Leistungen ansehen
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="section-padding bg-secondary/30">
+        <div className="container-custom">
+          <AnimatedSection className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Was uns ausmacht</h2>
+          </AnimatedSection>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <AnimatedSection delay={0.1} className="bg-white p-8 rounded-sm shadow-sm border border-border h-full">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <Star className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Jung & engagiert</h3>
+              <p className="text-muted-foreground">Moderne Denkweise trifft auf präzises Handwerk.</p>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.2} className="bg-white p-8 rounded-sm shadow-sm border border-border h-full">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <Hammer className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Leidenschaft</h3>
+              <p className="text-muted-foreground">Wir geben jedem Projekt unsere volle Aufmerksamkeit – vom kleinen Innenausbau bis zur grossen Konstruktion.</p>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.3} className="bg-white p-8 rounded-sm shadow-sm border border-border h-full">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <Leaf className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Nachhaltig bauen</h3>
+              <p className="text-muted-foreground">Holz als klimafreundlicher, natülicher Rohstoff steht bei uns im Mittelpunkt.</p>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.4} className="bg-white p-8 rounded-sm shadow-sm border border-border h-full">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <Zap className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Dynamisch & flexibel</h3>
+              <p className="text-muted-foreground">Schnelle Terminfindung, transparente Kommunikation und saubere Umsetzung.</p>
+            </AnimatedSection>
           </div>
         </div>
       </section>
