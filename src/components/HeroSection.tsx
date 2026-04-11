@@ -1,21 +1,39 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, CheckCircle, MapPin } from "lucide-react";
 import heroImage from "@/assets/hero-craftsmanship.jpg";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Premium Overlay */}
-      <div className="absolute inset-0 z-0">
+    <section
+      ref={sectionRef}
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
+      {/* Parallax Background */}
+      <motion.div
+        className="absolute inset-0 z-0 will-change-transform"
+        style={{ y: imageY, scale: imageScale }}
+      >
         <img
           src={heroImage}
           alt="CH Montagen - Präzise Holzbau und Montage"
-          className="w-full h-full object-cover"
+          className="w-full h-[120%] object-cover"
         />
-        {/* Clean, high-contrast overlay */}
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
+      </motion.div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 z-[1] bg-black/60" />
 
       {/* Content */}
       <div className="container-custom relative z-10 pt-20">
@@ -24,8 +42,8 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mb-6 md:mb-8"
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium tracking-wide">
               <MapPin className="w-4 h-4" />
@@ -37,44 +55,53 @@ const HeroSection = () => {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8"
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 md:mb-8"
           >
-            Saubere Arbeit, <br />
-            <span className="text-white/90">klare Absprachen und moderne Lösungen in&nbsp;Holz</span>
-            <span className="text-white/80 block text-3xl md:text-5xl mt-4">– schweizweit im Einsatz.</span>
+            Saubere Arbeit, <br className="hidden sm:block" />
+            <span className="text-white/90">
+              klare Absprachen und moderne Lösungen in&nbsp;Holz
+            </span>
+            <span className="text-white/80 block text-2xl sm:text-3xl md:text-5xl mt-3 md:mt-4">
+              – schweizweit im Einsatz.
+            </span>
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl leading-relaxed font-light"
+            transition={{ duration: 0.7, delay: 0.7 }}
+            className="text-base md:text-xl text-white/80 mb-8 md:mb-10 max-w-2xl leading-relaxed font-light"
           >
-            CH-Montagen by Schoeler GmbH ist dein Partner für präzise Montagen und zeitgemässen Holzbau.
+            CH-Montagen by Schoeler GmbH ist dein Partner für präzise Montagen
+            und zeitgemässen Holzbau.
           </motion.p>
 
           {/* Trust Indicators */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap gap-x-8 gap-y-4 mb-12"
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex flex-wrap gap-x-6 md:gap-x-8 gap-y-3 mb-10 md:mb-12"
           >
-            {["Jung & engagiert", "Schweizweit tätig", "Nachhaltig bauen"].map((item, index) => (
-              <div key={index} className="flex items-center gap-3 text-white">
-                <CheckCircle className="w-5 h-5 text-white/80" />
-                <span className="text-sm font-medium tracking-wide">{item}</span>
-              </div>
-            ))}
+            {["Jung & engagiert", "Schweizweit tätig", "Nachhaltig bauen"].map(
+              (item, index) => (
+                <div key={index} className="flex items-center gap-2 md:gap-3 text-white">
+                  <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-white/80" />
+                  <span className="text-xs md:text-sm font-medium tracking-wide">
+                    {item}
+                  </span>
+                </div>
+              )
+            )}
           </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ duration: 0.7, delay: 0.9 }}
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link
